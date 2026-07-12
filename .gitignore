@@ -1,0 +1,82 @@
+﻿##############################
+# Build output — never commit these; they're regenerated on every build
+# and this is exactly what leaked your AWS keys last time.
+##############################
+bin/
+obj/
+out/
+[Dd]ebug/
+[Rr]elease/
+[Aa]rtifacts/
+publish/
+
+##############################
+# Visual Studio / VS Code specific
+##############################
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+##############################
+# Secrets and local config — the actual fix for what happened
+##############################
+# If you ever create environment-specific settings files with real secrets,
+# ignore them explicitly and keep only a template committed:
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+appsettings.*.local.json
+*.pfx
+*.key
+*.pem
+.env
+.env.*
+
+##############################
+# NuGet
+##############################
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+##############################
+# Rider / JetBrains
+##############################
+.idea/
+
+##############################
+# macOS / Windows OS junk
+##############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+##############################
+# Logs and temp files
+##############################
+*.log
+*.tmp
+logs/
+
+##############################
+# Test results
+##############################
+TestResults/
+[Cc]overage/
+*.coverage
+*.coveragexml
+
+##############################
+# Secret-scanning baseline (safe to commit, but listing for clarity —
+# comment out if you DO want this tracked)
+##############################
+.secrets.baseline
+.vscode/
+.vs/

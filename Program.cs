@@ -47,8 +47,8 @@ namespace AttendancePipeline
             var awsSection = configuration.GetSection("AWS");
             var region = awsSection["Region"] ?? string.Empty;
             _bucketName = awsSection["BucketName"] ?? string.Empty;
-            var accessKey = awsSection["AccessKey"];
-            var secretKey = awsSection["SecretKey"];
+            var accessKey = Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID");
+            var secretKey = Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
             //var endpointOverride = awsSection["ServiceURL"] ?? string.Empty;
 
             var credentials = new BasicAWSCredentials(accessKey, secretKey);
